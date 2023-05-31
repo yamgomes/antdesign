@@ -7,11 +7,11 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme, Breadcrumb } from "antd";
-import TableExample from "./components/Table";
+import TableExample from "../components/Table";
 
 const { Header, Sider, Content } = Layout;
 
-const App: React.FC = () => {
+const Tabelas: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
@@ -68,6 +68,9 @@ const App: React.FC = () => {
               {
                 title: <a href="/">Dashboard</a>,
               },
+              {
+                title: <a href="/tabelas">Tabelas</a>,
+              },
             ]}
           />
         </Header>
@@ -78,10 +81,12 @@ const App: React.FC = () => {
             minHeight: 280,
             background: colorBgContainer,
           }}
-        ></Content>
+        >
+          <TableExample />
+        </Content>
       </Layout>
     </Layout>
   );
 };
 
-export default App;
+export default Tabelas;
