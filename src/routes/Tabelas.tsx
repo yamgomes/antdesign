@@ -24,7 +24,7 @@ const Tabelas: React.FC = () => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["1"]}
+          defaultSelectedKeys={["2"]}
           items={[
             {
               key: "1",

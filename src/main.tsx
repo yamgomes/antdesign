@@ -5,7 +5,8 @@ import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Tabelas from "./routes/tabelas.tsx";
+import Tabelas from "./routes/Tabelas.tsx";
+import Formularios from "./routes/Formularios.tsx";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/tabelas",
     element: <Tabelas />,
+  },
+  {
+    path: "/forms",
+    element: <Formularios />,
   },
 ]);
 

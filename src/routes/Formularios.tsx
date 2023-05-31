@@ -6,12 +6,15 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu, Button, theme, Breadcrumb } from "antd";
-import TableExample from "./components/Table";
+import { Layout, Menu, Button, theme, Breadcrumb, Row, Col } from "antd";
+import TableExample from "../components/Table";
+import Forms from "../components/Form";
+import { Footer } from "antd/es/layout/layout";
+import Forms2 from "../components/Form2";
 
 const { Header, Sider, Content } = Layout;
 
-const App: React.FC = () => {
+const Formularios: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
@@ -36,7 +39,7 @@ const App: React.FC = () => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["1"]}
+          defaultSelectedKeys={["3"]}
           items={[
             {
               key: "1",
@@ -80,20 +83,36 @@ const App: React.FC = () => {
               {
                 title: <a href="/">Dashboard</a>,
               },
+              {
+                title: <a href="/tabelas">Tabelas</a>,
+              },
             ]}
           />
         </Header>
         <Content
           style={{
-            margin: "24px 16px",
+            margin: "24px 16px 0",
+            overflow: "initial",
             padding: 24,
-            minHeight: 280,
+            textAlign: "center",
             background: colorBgContainer,
           }}
-        ></Content>
+        >
+          <Row>
+            <Col span={12}>
+              <Forms />
+            </Col>
+            <Col span={12}>
+              <Forms2 />
+            </Col>
+          </Row>
+          <Footer style={{ textAlign: "center" }}>
+            Ant Design ©2023 Created by Ant UED
+          </Footer>
+        </Content>
       </Layout>
     </Layout>
   );
 };
 
-export default App;
+export default Formularios;
